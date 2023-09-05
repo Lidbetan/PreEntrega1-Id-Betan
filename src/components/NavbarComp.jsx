@@ -7,8 +7,8 @@ import CartWidget from './CartWidget';
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-secondary bg-opacity-50 justify-content-between">
-      <Container className='d-flex'>
+    <Navbar expand="lg" className="bg-secondary bg-opacity-50 justify-content-between  flex-row-reverse flex-md-row">
+       <Container className='d-flex flex-column flex-md-row gap-2'>
         <Navbar.Brand href="#home" class="text-uppercase text-decoration-none"><span className='brand-name fw-bold fs-1'>Rock<span className='ampersand'>&</span>D</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="p-2 ms-3" id="basic-navbar-nav">
