@@ -2,7 +2,7 @@ import React from 'react'
 
 const CartWidget = () => {
   return (
-    <div className='d-flex'>
+    <div className='d-flex flex-row'>
         <img src='./src/assets/cart-icon-r.png' alt='cart-icon'></img>
         <p className='fw-bold p-1'>1</p>
     </div>
