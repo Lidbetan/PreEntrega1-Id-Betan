@@ -18,3 +18,10 @@
 .greeting {
     font-family: 'MedievalSharp', cursive !important
 }
+.product-image {
+    width:250px;
+    height: 250px;
+}
+.card{
+    width: 300px;
+}

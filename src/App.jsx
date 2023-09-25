@@ -2,15 +2,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavbarComp from './components/NavbarComp'
-import ItemListContainer from './components/ItemListContainer';
+
+
+import RoutesComp from './components/RoutesComp';
+
+
+
 
 
 function App() {
-
+  
   return (
     <div className='bg-body'>
       <NavbarComp/>
-      <ItemListContainer greeting="Nuestros productos"/>
+      {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
+      Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}
+      <RoutesComp/>
     </div>
   )
 }

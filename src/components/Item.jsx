@@ -5,11 +5,11 @@ import Button from 'react-bootstrap/Button';
 
 const Item = ({products}) => {
   return (
-    <div className='d-flex flex-column align-items-center gap-1'>
-      <img src={products.img} alt={products.alt}></img>
-      <p className='fw-semibold'>{products.name}</p>
-      <p>{products.price}</p>
-      <Button variant="primary">Add to cart</Button>{' '}
+    <div className='card d-flex flex-column justify-content-between align-items-center text-center gap-1 p-1'>
+      <img className="product-image"src={products.image}></img>
+      <p className='fw-semibold'>{products.title}</p>
+      <p>${products.price}</p>
+      <Button variant="primary">View details</Button>{' '}
     </div>
   )
 }
