@@ -1,9 +1,9 @@
 import React from 'react'
 import ItemDetail from './ItemDetail'
-import useApiData from '../hooks/useApiData'
+import useApiData from '/src/hooks/useApiData.jsx'
 
-const ItemDetailContainer = () => {
-    const [item] = useApiData('https://fakestoreapi.com/products/3')
+const ItemDetailContainer = ({id}) => {
+    const [item] = useApiData(`https://fakestoreapi.com/products/${id}`)
 
   return (
     <div>

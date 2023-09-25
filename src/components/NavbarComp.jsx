@@ -11,23 +11,23 @@ import { Link } from 'react-router-dom';
 function NavBar() {
   return (
     <Navbar expand="lg" className="bg-secondary bg-opacity-50 justify-content-between  flex-row-reverse flex-md-row">
-       <Container className='d-flex flex-column flex-md-row gap-2'>
-       
+      <Container className='d-flex flex-column flex-md-row gap-2'>
+
         <Navbar.Brand to="/" className="text-uppercase text-decoration-none p-2"><span className='brand-name fw-bold fs-1'>Rock<span className='ampersand'>&</span>D</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="p-2 ms-3" id="basic-navbar-nav">
-           <Nav>
+          <Nav>
             <Link className="ms-2 text-uppercase fw-bold" to="/">Home</Link>
             <Link className="ms-2 text-uppercase fw-bold" to="/contact">Contact</Link>
-            <NavDropdown className="ms-2 text-uppercase fw-bold"title="Products" id="basic-nav-dropdown">
+            <NavDropdown className="ms-2 text-uppercase fw-bold" title="Products" id="basic-nav-dropdown">
               <Link className="p-2" to="/man">Man</Link>
               <Link className="p-2" to="/women">Women</Link>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <CartWidget/>
-      
+      <CartWidget />
+
     </Navbar>
   );
 }

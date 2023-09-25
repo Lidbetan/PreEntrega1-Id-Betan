@@ -5,6 +5,10 @@
     padding:0 !important;
     box-sizing: border-box !important;
 }
+a {
+    text-decoration: none!important;
+    
+}
 
 .brand-name {
     font-family: 'MedievalSharp', cursive !important;
@@ -25,3 +29,4 @@
 .card{
     width: 300px;
 }
+

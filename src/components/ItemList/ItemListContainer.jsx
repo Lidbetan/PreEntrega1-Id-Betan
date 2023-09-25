@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 // import products from '../data/products';//Importa el archivo .js que simula ser la base de dato de los productos
 import ItemList from './ItemList'
-import useApiData from '../hooks/useApiData'
+import useApiData from '/src/hooks/useApiData.jsx'
 
 const ItemListContainer = ({ greeting }) => {
     const [data,loading,error] = useApiData('https://fakestoreapi.com/products')
