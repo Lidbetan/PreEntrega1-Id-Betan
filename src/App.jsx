@@ -13,7 +13,7 @@ import RoutesComp from './components/RoutesComp';
 function App() {
   
   return (
-    <div className='bg-body'>
+    <div>
       <NavbarComp/>
       {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
       Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}

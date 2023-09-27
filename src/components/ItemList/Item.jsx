@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ products }) => {
   return (
-    <div className='card d-flex flex-column justify-content-between align-items-center text-center gap-1 p-1'>
+    <div className='card d-flex flex-column p-3 justify-content-between align-items-center text-center gap-1 p-1'>
       <img className="product-image" src={products.image}></img>
-      <p className='fw-semibold'>{products.title}</p>
-      <p>${products.price}</p>
+      <p className='fw-bold text-uppercase'>{products.title}</p>
+      <p className='fw-semibold'>${products.price}</p>
       <Link to={`/detail/${products.id}`}>
-        <Button variant="primary">View details</Button>{' '}
+        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' variant="primary">View details</Button>
       </Link>
     </div>
   )

@@ -10,13 +10,24 @@ a {
     
 }
 
+body{
+    background-color: #EDEDED;
+}
+
+.navbar{
+    background-color: #918e8e
+}
 .brand-name {
     font-family: 'MedievalSharp', cursive !important;
+    color:black;
 }
 .ampersand{
     color: red;
 }
-.nav-link:hover {
+.navlink {
+    color:black;
+}
+.navlink:hover {
     color:purple;
 }
 .greeting {
@@ -27,6 +38,20 @@ a {
     height: 250px;
 }
 .card{
-    width: 300px;
+    width: 350px;
+    border-radius: 10px;
+}
+.detail-card {
+    width: 650px;
+    border-radius: 10px; 
+}
+.detail-content{
+    max-width: 65%;
+}
+.button {
+    background-color: #444444;
+}
+.button:hover {
+    background-color:#DA0037;
 }
 
