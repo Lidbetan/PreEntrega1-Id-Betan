@@ -12,7 +12,7 @@ const ItemListContainer = ({ greeting }) => {
             {loading && <p className='text-center'>Cargando...</p>}
             {error && <p >{error}</p>}
             <h1 className='greeting text-center mt-3 fw-bold'>{greeting}</h1>
-            <div className='wrapper d-flex m-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-2'>
+            <div className='wrapper d-flex w-75 mx-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-2'>
                 {data.map((prod)=>(
                     <ItemList key={prod.id} products={prod} />
                 ))

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="navbar justify-content-between  flex-row-reverse flex-md-row">
+    <Navbar expand="lg" className="navbar justify-content-between flex-row-reverse flex-md-row">
       <Container className='d-flex flex-column flex-md-row gap-2'>
         <Link to="/" className="text-uppercase text-decoration-none p-2"><span className='brand-name fw-bold fs-1'>Rock<span className='ampersand'>&</span>D</span></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

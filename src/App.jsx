@@ -11,7 +11,6 @@ import RoutesComp from './components/RoutesComp';
 
 
 function App() {
-  
   return (
     <div>
       <NavbarComp/>
