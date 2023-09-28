@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import Counter from '../Counter/Counter'
 
 const ItemDetail = ({ item }) => {
   return (
@@ -10,8 +11,12 @@ const ItemDetail = ({ item }) => {
         <p className='fw-bold text-uppercase'>{item.title}</p>
         <p className='fw-semibold'>${item.price}</p>
         <p>{item.description}</p>
-        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2'>Add to Cart</Button>
+        <div>
+            <Counter/>
+            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2'>Add to Cart</Button>
+        </div>
       </div>
+          
 
     </div>
 

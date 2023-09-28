@@ -54,4 +54,11 @@ body{
 .button:hover {
     background-color:#DA0037;
 }
+.counter {
+    width: 30px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px black solid;
+    text-align: center;
+}
 
