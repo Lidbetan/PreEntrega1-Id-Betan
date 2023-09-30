@@ -9,8 +9,8 @@ const ItemListContainer = ({ greeting }) => {
     console.log(data)
     return (
         <div>
-            {loading && <p className='text-center'>Cargando...</p>}
-            {error && <p >{error}</p>}
+            {loading && <p className='text-center fw-bold'>Cargando...</p>}
+            {error && <p className='text-center fw-bold'>Ups..something has failed.. we are working to solve it.  </p>}
             <h1 className='greeting text-center mt-3 fw-bold'>{greeting}</h1>
             <div className='wrapper d-flex w-75 mx-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-2'>
                 {data.map((prod)=>(

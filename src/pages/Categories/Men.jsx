@@ -10,7 +10,7 @@ const Man = () => {
     <div>
             {loading && <p>Cargando...</p>}
             {error && <p>{error}</p>}
-            <h1 className='greeting text-center mt-3 fw-bold'>Man Clothes</h1>
+            <h1 className='greeting text-center mt-3 fw-bold'>Men Clothes</h1>
             <div className='wrapper d-flex m-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-2'>
                 {data.map((prod)=>(
                     <ItemList key={prod.id} products={prod} />

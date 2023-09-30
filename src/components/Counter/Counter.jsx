@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import useCounter from '../../hooks/useCounter'
 
 const Counter = () => {
-    
+    console.log("Se renderiza")
     const {counter, increment, decrement} = useCounter()
     return (
         <div className='items-counter d-flex flex-row align-items-end justify-content-center justify-content-md-end gap-2'>
