@@ -2,21 +2,23 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavbarComp from './components/NavbarComp'
-
-
 import RoutesComp from './components/RoutesComp';
-
-
-
-
+import { useState } from 'react';
+import UserContextProvider from './components/Context/UserContextProvider';
 
 function App() {
+
   return (
     <div>
-      <NavbarComp/>
-      {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
-      Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}
-      <RoutesComp/>
+      {/* UserContextProvider viene con su value={user} traido desde el provider.
+      Por lo cual todos los childrens puede acceder al mismo */}
+      <UserContextProvider>
+        <NavbarComp />
+        {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
+        Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}
+        <RoutesComp />
+      </UserContextProvider>
+
     </div>
   )
 }

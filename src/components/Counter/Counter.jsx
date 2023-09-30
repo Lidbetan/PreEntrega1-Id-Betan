@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import useCounter from '../../hooks/useCounter'
 
 const Counter = () => {
+     //Se actualiza cada vez que le doy click a increment o decrement.
     console.log("Se renderiza")
     const {counter, increment, decrement} = useCounter()
     return (
