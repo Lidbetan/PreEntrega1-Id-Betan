@@ -6,8 +6,8 @@ import Contact from '../pages/Contact';
 import Men from '../pages/Categories/Men';
 import Women from '../pages/Categories/Women';
 import Detail from '../pages/Detail';
-import UserContext from './Context/UserContext';
 import { UserDetail } from './UsetDetail/UserDetail';
+import CartDetail from '../pages/CartDetail';
 
 const RoutesComp = () => {
     return (
@@ -21,6 +21,7 @@ const RoutesComp = () => {
                     <Route path='/men' element={<Men />} />
                     <Route path='/women' element={<Women />} />
                     <Route path='/user' element={<UserDetail />} />
+                    <Route path='/cart' element={<CartDetail />} />
                 </Routes>
 
         </>

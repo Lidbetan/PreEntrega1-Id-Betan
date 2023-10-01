@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import Counter from '../Counter/Counter'
 
-const ItemDetail = ({ item }) => {
+
+const ItemDetail = ({ item, onAdd }) => {
   return (
 
     <div className='card detail-card d-flex flex-column p-4 mt-5 justify-content-between align-items-center text-center gap-1 p-1 flex-md-row justify-content-md-evenly  '>
@@ -12,8 +12,8 @@ const ItemDetail = ({ item }) => {
         <p className='fw-semibold'>${item.price}</p>
         <p>{item.description}</p>
         <div>
-            <Counter/>
-            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2'>Add to Cart</Button>
+            <Counter onAdd={onAdd}/>
+            
         </div>
       </div>
           

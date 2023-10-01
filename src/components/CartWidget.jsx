@@ -1,16 +1,21 @@
-import React from 'react'
-import UserContext from './Context/UserContext'
-import { UserDetail } from './UsetDetail/UserDetail'
+import {React, useContext} from 'react'
+import UserContext from './Context/UserContext/UserContext'
+import { Link } from 'react-router-dom'
+
+
 const CartWidget = () => {
+  const { user } = useContext(UserContext)
   return (
     <div className='d-flex flex-row'>
-      {/* <img src='./src/assets/cart-icon-r.png' alt='cart-icon'></img>
-        <p className='fw-bold p-1'>1</p> */}
-      {/* <UserContext.Consumer value = {UserDetail}>
+      <Link to="/cart">
+        <img src='./src/assets/cart-icon-r.png' alt='cart-icon'></img>
+      </Link>
+      <p className='fw-bold p-1'>1</p>
 
-        {/* Welcome, {user.name}! */}
 
-      {/* </UserContext.Consumer> */} 
+      <p>Welcome, {user.name}! </p>
+
+
     </div>
   )
 }

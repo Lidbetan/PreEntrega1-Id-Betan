@@ -4,7 +4,8 @@ import './App.css'
 import NavbarComp from './components/NavbarComp'
 import RoutesComp from './components/RoutesComp';
 import { useState } from 'react';
-import UserContextProvider from './components/Context/UserContextProvider';
+import UserContextProvider from './components/Context/UserContext/UserContextProvider';
+import CartContextProvider from './components/Context/CartContext/CartContextProvider';
 
 function App() {
 
@@ -12,12 +13,16 @@ function App() {
     <div>
       {/* UserContextProvider viene con su value={user} traido desde el provider.
       Por lo cual todos los childrens puede acceder al mismo */}
-      <UserContextProvider>
-        <NavbarComp />
-        {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
-        Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}
-        <RoutesComp />
-      </UserContextProvider>
+      <CartContextProvider>
+        <UserContextProvider>
+
+          <NavbarComp />
+          {/* Defino las rutas y Componentes/pages que van a seguir mis enlaces. 
+          Lo que esté fuera de mis rutas, VA A QUEDAR SIEMPRE FIJO*/}
+          <RoutesComp />
+
+        </UserContextProvider>
+      </CartContextProvider>
 
     </div>
   )
