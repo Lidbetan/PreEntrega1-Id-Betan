@@ -18,8 +18,8 @@ const RoutesComp = () => {
                     {/* En este caso luego de la url detail tomo el id como una propiedad al asignarle ":id"
                     y se la paso al useParams de Detail como prop.  */}
                     <Route path='/detail/:id' element={<Detail />} />
-                    <Route path='/men' element={<Men />} />
-                    <Route path='/women' element={<Women />} />
+                    <Route path='/category/men' element={<Men />} />
+                    <Route path='/category/women' element={<Women />} />
                     <Route path='/user' element={<UserDetail />} />
                     <Route path='/cart' element={<CartDetail />} />
                 </Routes>
