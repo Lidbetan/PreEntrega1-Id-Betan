@@ -10,7 +10,7 @@ const Item = ({ products }) => {
       <img className="product-image" src={products.image}></img>
       <p className='fw-bold text-uppercase'>{products.title}</p>
       <p className='fw-semibold'>${products.price}</p>
-      <Link to={`/detail/${products.id}`}>
+      <Link to={`/item/${products.id}`}>
         <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' variant="primary">View details</Button>
       </Link>
     </div>

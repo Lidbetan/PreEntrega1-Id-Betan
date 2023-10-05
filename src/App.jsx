@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavbarComp from './components/NavbarComp'
 import RoutesComp from './components/RoutesComp';
-import { useState } from 'react';
 import UserContextProvider from './components/Context/UserContext/UserContextProvider';
 import CartContextProvider from './components/Context/CartContext/CartContextProvider';
 
