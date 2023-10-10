@@ -8,7 +8,7 @@ const CartWidget = () => {
   return (
     <div className='d-flex flex-row'>
       <Link to="/cart">
-        <img src='./src/assets/cart-icon-r.png' alt='cart-icon'></img>
+        <img src='https://i.postimg.cc/rFcDCBc6/cart-icon-r.png' alt='cart-icon'></img>
       </Link>
       <p className='fw-bold p-1'>1</p>
 

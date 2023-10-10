@@ -13,7 +13,6 @@ const ItemDetail = ({ item, onAdd }) => {
         <p>{item.description}</p>
         <div>
             <Counter onAdd={onAdd}/>
-            
         </div>
       </div>  
           
