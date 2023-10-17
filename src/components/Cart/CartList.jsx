@@ -1,25 +1,29 @@
-import React from 'react'
-import RemoveItem from './RemoveItem'
-import OrderButton from './Order/OrderButton'
+import React, { useContext } from 'react'
+import CreateOrder from './Order/CreateOrder'
+import ClearCart from './ClearCart'
 
-const CartList = ({ cart }) => {
+
+const CartList = ({cart, removeItem, clear, order}) => {
     return (
-        <div className='w-50 m-auto p-5'>
+        <div className='container-sm m-auto p-5'>
             <ul>
-                {cart.map(prod => (
+            
+                {cart.length > 0  && cart.map(prod => (
 
                     <li key={prod.item.id} className='d-flex flex-direction-row justify-content-between p-1'>
                         <p className='w-25'>{prod.item.title}</p>
                         <p>{prod.q}</p>
                         <p>${prod.item.price}</p>
-                        <RemoveItem />
+                        <button onClick={()=>removeItem(prod.item.id)}>Remove</button>
                     </li>
                 
                 ))
                 }
             
             </ul>
-            <OrderButton/>
+            <ClearCart clear={clear}/>
+            {console.log(typeof order)}
+            <CreateOrder order={order}/>
 
         </div>
     )

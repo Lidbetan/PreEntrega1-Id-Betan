@@ -12,7 +12,7 @@ const ItemDetail = ({ item, onAdd }) => {
         <p className='fw-semibold'>${item.price}</p>
         <p>{item.description}</p>
         <div>
-            <Counter onAdd={onAdd}/>
+            <Counter text="Add to Cart" onAdd={onAdd}/>
         </div>
       </div>  
           

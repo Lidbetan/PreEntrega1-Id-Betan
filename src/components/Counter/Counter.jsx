@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import useCounter from '../../hooks/useCounter'
 
-const Counter = ({onAdd}) => {
+const Counter = ({text, onAdd}) => {
      //Se actualiza cada vez que le doy click a increment o decrement.
     const {counter, increment, decrement} = useCounter()
     return (
@@ -10,7 +10,7 @@ const Counter = ({onAdd}) => {
             <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={increment}>+</Button>
             <div className='counter'>{counter}</div>
             <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={decrement}>-</Button>
-            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>Add to Cart</Button>
+            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
         </div>
     )
 }
