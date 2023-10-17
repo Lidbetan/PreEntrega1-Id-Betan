@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import ItemList from './ItemList'
-import useApiData from '/src/hooks/useApiData.jsx'
 //el método getFirestore es el que nos permite hacer la conexión a la base de datos.
 import {collection, getDocs, getFirestore} from "firebase/firestore"
 const ItemListContainer = ({ greeting }) => {
@@ -22,7 +21,6 @@ const ItemListContainer = ({ greeting }) => {
                     }
                     
                 ))
-                console.log(allData)
                 setProducts(allData)
             })
             .catch((err) => console.log(err))

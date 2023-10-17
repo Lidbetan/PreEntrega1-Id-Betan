@@ -7,12 +7,11 @@ import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 
 const ItemDetailContainer = ({ id }) => {
-  // const [item] = useApiData(`https://fakestoreapi.com/products/${id}`)
-  const { addItem } = useContext(CartContext)
+  const { addItem, cart } = useContext(CartContext)
   const [item, setItem] = useState(null);
   const onAdd = (counter) => {
     //Si el counter no es mayor a 0, no agrega nada al cart.
-    if(counter > 0){
+    if(counter > 0 ){
       addItem(item, counter)
     }else {
       alert("Please refer how many items you want to add to cart")
