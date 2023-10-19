@@ -31,7 +31,7 @@ const ItemListContainer = ({ greeting }) => {
             {error && <p className='text-center fw-bold'>Ups..something has failed.. we are working to solve it.  </p>} */}
             
             <h1 className='greeting text-center mt-3 fw-bold'>{greeting}</h1>
-            <div className='wrapper d-flex w-75 mx-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-2'>
+            <div className='wrapper d-flex w-75 mx-auto justify-content-center align-content-center p-3 flex-column flex-md-row flex-wrap gap-4'>
                 {   products.length > 0 &&
                     products.map((prod)=>(
                     <ItemList key={prod.id} products={prod} />

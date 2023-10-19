@@ -5,7 +5,7 @@ const ItemList = ({ products }) => {
     return (
         <>
             
-            <Item products={products}/>
+        <Item products={products}/>
         
         </>
 

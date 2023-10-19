@@ -12,7 +12,7 @@ const Item = ({ products }) => {
       <p className='fw-bold text-uppercase'>Stock:{products.stock}</p>
       <p className='fw-semibold'>${products.price}</p>
       <Link to={`/item/${products.id}`}>
-        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' variant="primary">View details</Button>
+        <Button className='button fw-semibold text-uppercase border border-0 p-1 mb-0 ' variant="primary">View details</Button>
       </Link>
     </div>
   )
