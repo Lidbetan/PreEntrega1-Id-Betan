@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import ClearCart from './ClearCart'
+import { Button } from 'react-bootstrap'
 
 
-const CartList = ({cart, removeItem, clear}) => {
+const CartList = ({cart, removeItem, clear, total}) => {
     return (
         <div className='container-sm m-auto p-5'>
             <ul>
@@ -13,12 +14,12 @@ const CartList = ({cart, removeItem, clear}) => {
                         <p className='w-25'>{prod.item.title}</p>
                         <p>{prod.q}</p>
                         <p>${prod.item.price * prod.q}</p>
-                        <button onClick={()=>removeItem(prod.item.id)}>Remove</button>
+                        <Button className='button' onClick={()=>removeItem(prod.item.id)}>Remove</Button>
                     </li>
                 
                 ))
                 }
-            
+                <p>Total: ${total}</p>
             </ul>
             <ClearCart clear={clear}/>
             

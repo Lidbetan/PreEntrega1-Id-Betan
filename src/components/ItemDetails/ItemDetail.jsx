@@ -2,7 +2,7 @@ import React from 'react'
 import Counter from '../Counter/Counter'
 
 
-const ItemDetail = ({ item, onAdd }) => {
+const ItemDetail = ({ item, onAdd, noStock }) => {
   return (
 
     <div className='card detail-card d-flex flex-column p-4 mt-5 justify-content-between align-items-center text-center gap-1 p-1 flex-md-row justify-content-md-evenly  '>
@@ -12,7 +12,7 @@ const ItemDetail = ({ item, onAdd }) => {
         <p className='fw-semibold'>${item.price}</p>
         <p>{item.description}</p>
         <div>
-            <Counter text="Add to Cart" onAdd={onAdd}/>
+            <Counter text="Add to Cart" onAdd={onAdd} noStock={noStock}/>
         </div>
       </div>  
           

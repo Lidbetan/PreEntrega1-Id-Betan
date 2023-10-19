@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 const CreateOrder = ({addOrder}) => {
   return (
     <>  
-        <Button onClick={addOrder}>Checkout</Button>
+        <Button className= "button" onClick={addOrder}>Checkout</Button>
     </>
   )
 }

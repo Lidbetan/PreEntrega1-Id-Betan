@@ -1,50 +1,59 @@
 import React, { useState, useEffect } from 'react'
 import CartContext from './CartContext'
 
+
+
 const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
+    const [cartQ, setCartQ] = useState(0)
+    const [noStock, setNoStock] = useState(false)
     console.log("CARTCONTEXT", cart)
+    // console.log("noStock es:", noStock)
+
 
     //Agrega un item al carrito por cantidad = counter
     const addItem = (item, q) => {
-
-        //Verifico si el item que quiero agregar ya existe en el cart.
-        const itemExist = cart.some(prod => prod.item.id === item.id)
-        //Si existe, hago un map en el cual si el id del item a agregar coincide con 
-        console.log("Existe el item en el carrito?:", itemExist)
-        if (itemExist) {
-            const itemStocked = cart.some(prod => prod.item.stock >= q)
-            if (itemStocked) {
-                //Si existe, se hace un map en el que a cada prod se le suma q(counter) a la cantidad.
-                const addSameItem = cart.map(prod => {
-                    if (prod.item.id === item.id) {
-                        prod.q = prod.q + q
+        //Comprueba que haya stock mayor al solicitado por el usuario
+        if (item.stock >= q) {
+            //Verifico si el item que quiero agregar ya existe en el cart.
+            const itemExist = cart.some(prod => prod.item.id === item.id)
+            console.log("Existe el item en el carrito?:", itemExist)
+            if (itemExist) {
+                    const addSameItem = cart.map(prod => {
+                        if (prod.item.id === item.id) {
+                            prod.q = prod.q + q
+                            return prod
+                        }
                         return prod
+                    })
+                    
+                    setCart(addSameItem)
+                    console.log("Acá se ejecuta addItem para agregar un item ya existente")
+            //En caso de no existir el item en el carrito toma el cart existente y le suma el item y q.  
+            } else {
+                setCart([
+                    ...cart,
+                    {
+                        item, q
                     }
-                }) 
-                console.log("Acá se ejecuta addItem para agregar un item ya existente")
-
-            } else{
-                alert("Out of stock")
+                ])
+                console.log("Acá se ejecuta addItem para agregar un item NO existente")
             }
-        //En caso de no existir el item en el carrito toma el cart existente y le suma el item y q.  
+            
         } else {
-            setCart([
-                ...cart,
-                {
-                    item, q
-                }
-            ])
-            console.log("Acá se ejecuta addItem para agregar un item NO existente")
+            let outOfStock = true;
+            // alert("Out of stock")
+            setNoStock(outOfStock)
         }
+        
     }
-
+    
     const removeItem = (id) => {
         const newCart = cart.filter((el) => el.item.id !== id);
         setCart(newCart)
     }
-    
+
     const clear = () => {
         setCart([])
     }
@@ -57,9 +66,18 @@ const CartContextProvider = ({ children }) => {
         setTotal(newTotal);
     };
 
+    const cartCounter = () => {
+        let totalItems = 0;
+        cart.map((prod)=>{
+            totalItems += prod.q;
+        });
+        setCartQ(totalItems)
+    }
     // Cada vez que cart se modifica, se vuelve a ejecutar totalPrice()
     useEffect(() => {
+        console.log("Cart updated:", cart);
         totalPrice();
+        cartCounter()
     }, [cart]);
 
     const values = {
@@ -67,11 +85,17 @@ const CartContextProvider = ({ children }) => {
         addItem,
         removeItem,
         clear,
-        total
+        total,
+        cartQ,
+        noStock
     }
+
+
+
     return (
         <CartContext.Provider value={values}>
             {children}
+            
         </CartContext.Provider>
     )
 }

@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 const ClearCart = ({ clear }) => {
 
     return (
-        <Button onClick={() => clear()}>Clear Cart</Button>
+        <Button className='button' onClick={() => clear()}>Clear Cart</Button>
     )
 }
 

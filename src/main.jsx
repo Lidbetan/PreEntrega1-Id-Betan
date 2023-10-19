@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import 'react-toastify/dist/ReactToastify.css';
+import './index.css'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 

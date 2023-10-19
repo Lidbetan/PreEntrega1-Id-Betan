@@ -1,59 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
-* {
-    margin: 0 !important;
-    padding:0 !important;
-    box-sizing: border-box !important;
-}
-a {
-    text-decoration: none!important;
-    
+:root {
+    --toastify-color-light: #918e8e;
+    --toastify-text-color-light: #ffffff;
+    --toastify-color-progress-light: linear-gradient(to right,
+            #fc6464,
+            #f33a3a,
+            #fd2a2a,
+            #fa1c1c,
+            #fd1616,
+            #ff002f);
+    --toastify-font-family: 'MedievalSharp', cursive, sans-serif;
 }
 
-body{
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+a {
+    text-decoration: none !important;
+
+}
+
+body {
     background-color: #EDEDED;
 }
 
-.navbar{
+.navbar {
     background-color: #918e8e
 }
+
 .brand-name {
     font-family: 'MedievalSharp', cursive !important;
-    color:black;
+    color: black;
 }
-.ampersand{
+
+.ampersand {
     color: red;
 }
+
 .navlink {
-    color:black;
+    color: black;
 }
+
 .navlink:hover {
-    color:purple;
+    color: purple;
 }
+
 .greeting {
     font-family: 'MedievalSharp', cursive !important
 }
+
 .product-image {
-    width:250px;
+    width: 250px;
     height: 250px;
 }
-.card{
+
+.card {
     width: 320px;
     border-radius: 10px;
 }
+
 .detail-card {
     width: 650px;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
-.detail-content{
+
+.detail-content {
     max-width: 65%;
 }
+
 .button {
     background-color: #444444;
+    border: none!important;
+    padding: 5px !important;
 }
+
 .button:hover {
-    background-color:#DA0037;
+    background-color: #DA0037;
 }
+
 .counter {
     width: 30px;
     height: 32px;
@@ -62,3 +90,11 @@ body{
     text-align: center;
 }
 
+.toast-btn {
+    border: none;
+}
+.custom-toast {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}

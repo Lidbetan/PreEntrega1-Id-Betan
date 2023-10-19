@@ -18,7 +18,6 @@ function NavBar() {
           <Nav>
             <Link className="navlink ms-2 text-uppercase fw-bold " to="/">Home</Link>
             <Link className="navlink ms-2 text-uppercase fw-bold" to="/contact">Contact</Link>
-            <Link className="navlink ms-2 text-uppercase fw-bold" to="/user">User</Link>
             <NavDropdown className="navlink ms-2 text-uppercase fw-bold" title="Products" id="basic-nav-dropdown">
               <Link className="navlink p-2" to="/category/rock">Rock</Link>
               <Link className="navlink p-2" to="/category/D&D">D&D</Link>
