@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, useCallback } from 'react'
 import ItemDetail from './ItemDetail'
 import { Col } from 'react-bootstrap'
 import CartContext from '../Context/CartContext/CartContext'
@@ -10,15 +10,26 @@ const ItemDetailContainer = ({ id }) => {
   const [showAlert, setShowAlert] = useState(false)
   const [item, setItem] = useState(null);
 
-  const onAdd = (counter) => {
-    
+  const onAdd = useCallback((counter) => {
+    console.log("onAdd executes...")
     //Si el counter no es mayor a 0, no agrega nada al cart.
     if(counter > 0 ){
       addItem(item, counter)
     }else {
       setShowAlert(true)
     }
-  }
+  },[addItem, item]);
+
+  // const onAdd = (counter) => {
+  //   console.log("onAdd executes...")
+  //   //Si el counter no es mayor a 0, no agrega nada al cart.
+  //   if(counter > 0 ){
+  //     addItem(item, counter)
+  //   }else {
+  //     setShowAlert(true)
+  //   }
+  // };
+
   useEffect(() => {
     /*Instanciamos Firestore dentro de db*/
     const db = getFirestore()

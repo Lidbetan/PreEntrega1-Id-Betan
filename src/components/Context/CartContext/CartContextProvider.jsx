@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import CartContext from './CartContext'
 
@@ -7,7 +8,7 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
     const [cartQ, setCartQ] = useState(0)
-    const [noStock, setNoStock] = useState(false)
+    // const [noStock, setNoStock] = useState(null)
     console.log("CARTCONTEXT", cart)
     // console.log("noStock es:", noStock)
 
@@ -15,40 +16,41 @@ const CartContextProvider = ({ children }) => {
     //Agrega un item al carrito por cantidad = counter
     const addItem = (item, q) => {
         //Comprueba que haya stock mayor al solicitado por el usuario
-        if (item.stock >= q) {
+        if (item.stock < q) {
+            alert("no stock")
+        } else {
             //Verifico si el item que quiero agregar ya existe en el cart.
             const itemExist = cart.some(prod => prod.item.id === item.id)
-            console.log("Existe el item en el carrito?:", itemExist)
+            // console.log("Existe el item en el carrito?:", itemExist)
             if (itemExist) {
-                    const addSameItem = cart.map(prod => {
-                        if (prod.item.id === item.id) {
-                            prod.q = prod.q + q
-                            return prod
-                        }
+                const addSameItem = cart.map(prod => {
+                    if (prod.item.id === item.id) {
+                        prod.q = prod.q + q
                         return prod
-                    })
-                    
-                    setCart(addSameItem)
-                    console.log("Acá se ejecuta addItem para agregar un item ya existente")
-            //En caso de no existir el item en el carrito toma el cart existente y le suma el item y q.  
-            } else {
-                setCart([
-                    ...cart,
-                    {
-                        item, q
                     }
-                ])
-                console.log("Acá se ejecuta addItem para agregar un item NO existente")
+                    return prod
+                })
+                setCart(addSameItem)
+                console.log("Acá se ejecuta addItem para agregar un item ya existente")
+                //En caso de no existir el item en el carrito toma el cart existente y le suma el item y q.
+            } else {
+            setCart([
+                ...cart,
+                {
+                    item, q
+                }
+            ])
+            console.log("Acá se ejecuta addItem para agregar un item NO existente")
             }
-            
-        } else {
-            let outOfStock = true;
-            // alert("Out of stock")
-            setNoStock(outOfStock)
-        }
-        
+
+        } 
+
     }
-    
+
+
+
+
+
     const removeItem = (id) => {
         const newCart = cart.filter((el) => el.item.id !== id);
         setCart(newCart)
@@ -68,7 +70,7 @@ const CartContextProvider = ({ children }) => {
 
     const cartCounter = () => {
         let totalItems = 0;
-        cart.map((prod)=>{
+        cart.map((prod) => {
             totalItems += prod.q;
         });
         setCartQ(totalItems)
@@ -87,7 +89,7 @@ const CartContextProvider = ({ children }) => {
         clear,
         total,
         cartQ,
-        noStock
+        // noStock
     }
 
 
@@ -95,7 +97,6 @@ const CartContextProvider = ({ children }) => {
     return (
         <CartContext.Provider value={values}>
             {children}
-            
         </CartContext.Provider>
     )
 }

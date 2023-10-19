@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import useCounter from '../../hooks/useCounter'
 import AddToast from '../Alerts/Toasts/addToast'
-import NoStockToast from '../Alerts/Toasts/NoStockToast'
 import { useState } from 'react'
 import CancelAddToast from '../Alerts/Toasts/CancelAddToast'
 
@@ -10,7 +9,7 @@ import CancelAddToast from '../Alerts/Toasts/CancelAddToast'
 
 
 
-const Counter = ({ text, onAdd, noStock }) => {
+const Counter = ({ text, onAdd, item }) => {
     //Se actualiza cada vez que le doy click a increment o decrement.
     const { counter, increment, decrement } = useCounter()
     const [countCero, setCountCero] = useState(false)
@@ -31,22 +30,23 @@ const Counter = ({ text, onAdd, noStock }) => {
 
     return (
         <div className='items-counter d-flex flex-row align-items-end justify-content-center justify-content-md-end gap-2'>
-            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={increment}>+</Button>
-            <div className='counter'>{counter}</div>
-            <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={decrement}>-</Button>
-            {/* En este condicional si el estado noStock es true,arroja un alerta de que no hay stock de dicho producto, caso contrario, deja agregarlo al carrito y arroja un toast "Added to cart" */}
-
-            {/* {   Cuando countCero es true, alerta con un TOAST que debe ingresar una cantidad, sino arroja el TOAST de agregado al carrito */}
-                {countCero || noStock ?
+            {item.stock == 0 ?<p></p>:<Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={increment}>+</Button>}
+            {item.stock == 0 ?<p></p>:<div className='counter'>{counter}</div>}
+            {item.stock == 0 ?<p></p>:<Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={decrement}>-</Button>}
+            
+            {
+                item.stock < counter ? <Button className='button text-uppercase fw-bold'>Out of stock.. </Button>
+                : countCero ?
                     <CancelAddToast>
-                        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}
-                        </Button>
+                        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
                     </CancelAddToast> 
                     :
                     <AddToast component="span" >
                         <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
                     </AddToast>
             }
+            
+                
 
         </div>
     )

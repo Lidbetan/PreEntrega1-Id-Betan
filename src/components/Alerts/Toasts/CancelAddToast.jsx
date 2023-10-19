@@ -1,11 +1,9 @@
 import React from 'react'
-
 import { ToastContainer, toast } from 'react-toastify';
 
-
-const toastMessage = () => toast('No stock avaiable '.toUpperCase(), {
+const toastMessage = () => toast('Please specify an amount..'.toUpperCase(), {
     className: "custom-toast",
-    position: "top-center",
+    position: "bottom-center",
     autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
@@ -15,7 +13,7 @@ const toastMessage = () => toast('No stock avaiable '.toUpperCase(), {
     theme: "light",
 });
 
-const NoStockToast = ({ children }) => {
+const CancelAddToast = ({ children }) => {
     return (
         <>
             <span className='toast-btn' onClick={toastMessage}>
@@ -26,4 +24,4 @@ const NoStockToast = ({ children }) => {
     )
 }
 
-export default NoStockToast
+export default CancelAddToast
