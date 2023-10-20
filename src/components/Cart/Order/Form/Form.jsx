@@ -87,7 +87,7 @@ const Form = ({ cart, total, clear }) => {
             {   
                 loading ? 
                 <div className="order-loading spinner-container">
-                    <Spinner animation="border" role="status"/>
+                    <Spinner  className="spinner" animation="border" role="status"/>
                     <h2>Creating Order...</h2>
                 </div>
                 :

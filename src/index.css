@@ -61,9 +61,17 @@ body {
     width: 250px;
     height: 250px;
 }
+.products-wrapper {
+    width:70% !important;
+}
+
+.spinner {
+    color: red;
+    margin-top: 1rem!important;
+}
 
 .card {
-    max-width: 320px;
+    max-width: 284px;
     height: 425px;
     border-radius: 10px;
     -webkit-box-shadow: -1px -1px 21px -6px rgba(0, 0, 0, 0.88);

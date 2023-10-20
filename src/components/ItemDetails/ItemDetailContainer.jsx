@@ -51,7 +51,7 @@ const ItemDetailContainer = ({ id }) => {
         item !== null ?
         <ItemDetail item={item} onAdd={onAdd} noStock={noStock} />
         :
-        <Spinner/>
+        <Spinner className='spinner'/>
       }
       {
         showAlert 
