@@ -38,23 +38,28 @@ const Form = ({ cart, total, clear }) => {
 
     return (
 
-        <div className='d-flex m-auto w-75 justify-content-center p-2'>
-            <form>
-                <label htmlFor="name">Enter your name</label>
-                <input onChange={handleChange} type='text' name="name" id="name" value={buyer.name}></input>
-                <label htmlFor="email">Enter your e-mail</label>
-                <input onChange={handleChange} type="text" name="email" id="email" value={buyer.email}></input>
-            </form>
+        <div className='form-ticket-wrapper'>
+            <form className='form-container container-sm col-md-10 col-lg-8 col-xl-6  '>
+                <label className="container-sm col-md-6 col-lg-4 col-xl-3" htmlFor="name">Enter your name:</label>
+                <input className="container-sm col-md-6 col-lg-4 col-xl-3" onChange={handleChange} type='text' name="name" id="name" value={buyer.name}></input>
+                <label className="container-sm col-md-6 col-lg-4 col-xl-3" htmlFor="email">Enter your e-mail:</label>
+                <input className="container-sm col-md-6 col-lg-4 col-xl-3" onChange={handleChange} type="text" name="email" id="email" value={buyer.email}></input>
             <CreateOrder addOrder={addOrder} />
+            </form>
             {
-                orderId && <span>Thank you for chosing us!<br />
-                    The total of your purchase is:<br />
-                    ${total}<br />
-                    Your order ID is: {orderId}
-                    <Link to="/">
-                        <Button className='button' onClick={clear}>Back to Home</Button>
-                    </Link>
-                </span>
+                orderId &&
+                <div className='order-ticket'>
+                        <h2>Thank you for chosing us!</h2>
+                        <p>The total of your purchase is: ${total}</p>
+                        <p>Your order ID is: <span>{orderId}</span></p>
+                        <Link to="/">
+                            <Button className='button' onClick={clear}>Back to Home</Button>
+                        </Link>
+            
+                </div>
+
+
+
             }
         </div>
 

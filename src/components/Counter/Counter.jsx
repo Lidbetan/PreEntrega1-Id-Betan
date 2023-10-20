@@ -29,20 +29,20 @@ const Counter = ({ text, onAdd, item }) => {
     },[counter]);
 
     return (
-        <div className='items-counter d-flex flex-row align-items-end justify-content-center justify-content-md-end gap-2'>
+        <div className='items-counter d-flex flex-row flex-wrap align-items-end justify-content-center justify-content-md-end gap-2'>
             {item.stock == 0 ?<p></p>:<Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={increment}>+</Button>}
             {item.stock == 0 ?<p></p>:<div className='counter'>{counter}</div>}
             {item.stock == 0 ?<p></p>:<Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={decrement}>-</Button>}
             
             {
-                item.stock < counter ? <Button className='button text-uppercase fw-bold'>Out of stock.. </Button>
+                item.stock < counter ? <Button className='button container-sm col-md-4 fw-semibold text-uppercase border border-0 p-1 mt-2'>Out of stock.. </Button>
                 : countCero ?
                     <CancelAddToast>
-                        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
+                        <Button className='button container-sm col-md-4 fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
                     </CancelAddToast> 
                     :
-                    <AddToast component="span" >
-                        <Button className='button fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
+                    <AddToast>
+                        <Button className='button container-sm col-md-4 fw-semibold text-uppercase border border-0 p-1 mt-2' onClick={() => onAdd(counter)}>{text}</Button>
                     </AddToast>
             }
             

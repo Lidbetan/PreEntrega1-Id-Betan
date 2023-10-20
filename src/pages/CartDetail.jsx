@@ -13,7 +13,7 @@ const CartDetail = () => {
         <>
             {cart.length > 0 &&
 
-                <div>
+                <div className='cart-wrapper align-items-center'>
                     <CartList cart={cart} removeItem={removeItem} clear={clear} total={total} />
                     <Form cart={cart} total={total} clear={clear}/>
                 </div>

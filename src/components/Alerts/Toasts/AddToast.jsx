@@ -18,7 +18,7 @@ const toastMessage = () => toast('Added to cart '.toUpperCase(), {
 const AddToast = ({ children }) => {
     return (
         <>
-            <span className='toast-btn' onClick={toastMessage}>
+            <span className='toast-btn w-100' onClick={toastMessage}>
                 {children}
             </span>
             <ToastContainer />

@@ -70,6 +70,15 @@ body {
     -moz-box-shadow: -1px -1px 21px -6px rgba(0, 0, 0, 0.88);
     box-shadow: -1px -1px 21px -6px rgba(0, 0, 0, 0.88);
 }
+.card:hover{
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(255, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(255, 0, 0, 1);
+    box-shadow: 0px 0px 24px 0px rgba(255, 0, 0, 1);
+}
+.item-detail-wrapper {
+    width: 95%!important;
+    margin: auto !important;
+}
 
 .detail-card {
     width: 650px;
@@ -86,9 +95,9 @@ body {
     box-shadow: 0px 0px 24px 0px rgba(255, 0, 0, 1);
 }
 
-.detail-content {
+/* .detail-content {
     max-width: 65%;
-}
+} */
 
 .button {
     background-color: #444444;
@@ -134,4 +143,29 @@ body {
 .total {
     border: 2px solid #726f6f;
     border-radius: 5px;
+}
+.cart-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.form-ticket-wrapper {
+    width: 95%;
+    margin: auto!important;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5rem;
+    margin: 1rem auto!important;
+}
+
+.order-ticket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem!important;
+    
 }

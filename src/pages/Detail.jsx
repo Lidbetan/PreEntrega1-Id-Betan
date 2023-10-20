@@ -7,7 +7,7 @@ const Detail = () => {
   const { id } = useParams()
 
   return (
-    <Container fluid>
+    <Container className='item-detail-wrapper'>
       <Row >
         <ItemDetailContainer id={id} />
       </Row>
