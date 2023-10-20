@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react'
 import ItemDetail from './ItemDetail'
-import { Col } from 'react-bootstrap'
+import { Col, Spinner } from 'react-bootstrap'
 import CartContext from '../Context/CartContext/CartContext'
 import { doc, getDoc, getFirestore } from "firebase/firestore"
 
@@ -62,7 +62,7 @@ const ItemDetailContainer = ({ id }) => {
         item !== null ?
         <ItemDetail item={item} onAdd={onAdd} noStock={noStock} />
         :
-        <p>Loading...</p>
+        <Spinner/>
       }
       {
         showAlert 

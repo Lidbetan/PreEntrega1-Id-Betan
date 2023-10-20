@@ -7,6 +7,10 @@ import { Button } from 'react-bootstrap'
 
 const Form = ({ cart, total, clear }) => {
     const [orderId, setOrderId] = useState("")
+    const [error, setError] = useState({
+        name:"",
+        email:""
+    })
     const [buyer, setBuyer] = useState({
         name: "",
         email: ""
@@ -36,15 +40,40 @@ const Form = ({ cart, total, clear }) => {
         })
     }
 
+    const onSubmit = (e)=>{
+        //Se encarga de validar los datos del formulario
+        e.preventDefault();
+        const errorLocal = {};
+
+        if(!buyer.name) {
+            errorLocal.name = "Name is mandatory"
+        }
+        if(!buyer.email) {
+            errorLocal.email = "Email is mandatory"
+        }
+        //Si errorLocal no tiene ninguna key, ejecuta addOrder.
+        if(Object.keys(errorLocal) == 0) {
+            addOrder();
+        }
+
+        else {
+            setError(errorLocal);
+        }
+    }
+
+
     return (
 
         <div className='form-ticket-wrapper'>
             <form className='form-container container-sm col-md-10 col-lg-8 col-xl-6  '>
                 <label className="container-sm col-md-6 col-lg-4 col-xl-3" htmlFor="name">Enter your name:</label>
-                <input className="container-sm col-md-6 col-lg-4 col-xl-3" onChange={handleChange} type='text' name="name" id="name" value={buyer.name}></input>
+                <input className={error.name ? "form-input-error container-sm col-md-6 col-lg-4 col-xl-3": "container-sm col-md-6 col-lg-4 col-xl-3"} onChange={handleChange} type='text' name="name" id="name" value={buyer.name}></input>
+                {error.name && <span>{error.name}</span>}
+
                 <label className="container-sm col-md-6 col-lg-4 col-xl-3" htmlFor="email">Enter your e-mail:</label>
-                <input className="container-sm col-md-6 col-lg-4 col-xl-3" onChange={handleChange} type="text" name="email" id="email" value={buyer.email}></input>
-            <CreateOrder addOrder={addOrder} />
+                <input className={error.email ? "form-input-error container-sm col-md-6 col-lg-4 col-xl-3": "container-sm col-md-6 col-lg-4 col-xl-3"} onChange={handleChange} type="text" name="email" id="email" value={buyer.email}></input>
+                {error.email && <span>{error.email}</span>}
+            <CreateOrder onSubmit={onSubmit} />
             </form>
             {
                 orderId &&
@@ -57,6 +86,8 @@ const Form = ({ cart, total, clear }) => {
                         </Link>
             
                 </div>
+                
+                
 
 
 
