@@ -1,10 +1,16 @@
-import React from 'react'
+import {React, useContext} from 'react'
+import { Link } from 'react-router-dom'
+import CartContext from './Context/CartContext/CartContext'
+
 
 const CartWidget = () => {
+  const{cartQ} = useContext(CartContext)
   return (
     <div className='d-flex flex-row'>
-        <img src='./src/assets/cart-icon-r.png' alt='cart-icon'></img>
-        <p className='fw-bold p-1'>1</p>
+      <Link to="/cart">
+        <img src='https://i.postimg.cc/rFcDCBc6/cart-icon-r.png' alt='cart-icon'></img>
+      </Link>
+      <p className='fw-bold p-1'>{cartQ}</p>
     </div>
   )
 }
