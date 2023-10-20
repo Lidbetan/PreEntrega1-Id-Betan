@@ -172,3 +172,11 @@ body {
     margin-top: 1rem!important;
     
 }
+.order-loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem!important;
+}

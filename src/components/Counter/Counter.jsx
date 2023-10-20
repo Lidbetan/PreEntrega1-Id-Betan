@@ -12,8 +12,8 @@ import CancelAddToast from '../Alerts/Toasts/CancelAddToast'
 const Counter = ({ text, onAdd, item }) => {
     //Se actualiza cada vez que le doy click a increment o decrement.
     const { counter, increment, decrement } = useCounter()
+    //El estado countCero se utiliza para renderizar condicionalmente el boton correspondiente a productos sin stock o cuando se ingresa un valor = 0 en el contador.
     const [countCero, setCountCero] = useState(false)
-    console.log("Counter se renderiza y countCero es:", countCero)
 
     //Esta funcion se encarga de dar true or false a countCero
     const cancelAdd = () => {

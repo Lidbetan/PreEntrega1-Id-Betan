@@ -8,10 +8,7 @@ const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0)
     const [cartQ, setCartQ] = useState(0)
-    // const [noStock, setNoStock] = useState(null)
     console.log("CARTCONTEXT", cart)
-    // console.log("noStock es:", noStock)
-
 
     //Agrega un item al carrito por cantidad = counter
     const addItem = (item, q) => {
@@ -89,7 +86,6 @@ const CartContextProvider = ({ children }) => {
         clear,
         total,
         cartQ,
-        // noStock
     }
 
 

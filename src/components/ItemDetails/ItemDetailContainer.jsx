@@ -11,7 +11,6 @@ const ItemDetailContainer = ({ id }) => {
   const [item, setItem] = useState(null);
 
   const onAdd = useCallback((counter) => {
-    console.log("onAdd executes...")
     //Si el counter no es mayor a 0, no agrega nada al cart.
     if(counter > 0 ){
       addItem(item, counter)
@@ -19,16 +18,6 @@ const ItemDetailContainer = ({ id }) => {
       setShowAlert(true)
     }
   },[addItem, item]);
-
-  // const onAdd = (counter) => {
-  //   console.log("onAdd executes...")
-  //   //Si el counter no es mayor a 0, no agrega nada al cart.
-  //   if(counter > 0 ){
-  //     addItem(item, counter)
-  //   }else {
-  //     setShowAlert(true)
-  //   }
-  // };
 
   useEffect(() => {
     /*Instanciamos Firestore dentro de db*/

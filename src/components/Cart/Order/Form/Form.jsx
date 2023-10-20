@@ -3,10 +3,11 @@ import { useState } from 'react'
 import CreateOrder from '../CreateOrder'
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
 
 const Form = ({ cart, total, clear }) => {
     const [orderId, setOrderId] = useState("")
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState({
         name:"",
         email:""
@@ -40,9 +41,10 @@ const Form = ({ cart, total, clear }) => {
         })
     }
 
-    const onSubmit = (e)=>{
+    const onSubmit = async(e)=>{
         //Se encarga de validar los datos del formulario
         e.preventDefault();
+        setLoading(true);
         const errorLocal = {};
 
         if(!buyer.name) {
@@ -53,12 +55,19 @@ const Form = ({ cart, total, clear }) => {
         }
         //Si errorLocal no tiene ninguna key, ejecuta addOrder.
         if(Object.keys(errorLocal) == 0) {
-            addOrder();
-        }
-
-        else {
+            try{
+                //Acá se va a implementar un delay de 2segundos para simular la carga del pedido.
+                await new  Promise (res => setTimeout(res, 2000))
+                //y luego se ejecuta addOrder
+                addOrder();
+            }
+            catch(error){
+                console.log("An error ocurred while loading your order..")
+            }
+        } else {
             setError(errorLocal);
         }
+        setLoading(false)
     }
 
 
@@ -75,21 +84,22 @@ const Form = ({ cart, total, clear }) => {
                 {error.email && <span>{error.email}</span>}
             <CreateOrder onSubmit={onSubmit} />
             </form>
-            {
+            {   
+                loading ? 
+                <div className="order-loading spinner-container">
+                    <Spinner animation="border" role="status"/>
+                    <h2>Creating Order...</h2>
+                </div>
+                :
                 orderId &&
                 <div className='order-ticket'>
-                        <h2>Thank you for chosing us!</h2>
-                        <p>The total of your purchase is: ${total}</p>
-                        <p>Your order ID is: <span>{orderId}</span></p>
-                        <Link to="/">
-                            <Button className='button' onClick={clear}>Back to Home</Button>
-                        </Link>
-            
-                </div>
-                
-                
-
-
+                    <h2>Thank you for choosing us!</h2>
+                    <p>The total of your purchase is: ${total}</p>
+                    <p>Your order ID is: <span>{orderId}</span></p>
+                    <Link to="/">
+                        <Button className='button' onClick={clear}>Back to Home</Button>
+                    </Link>
+                </div> 
 
             }
         </div>
