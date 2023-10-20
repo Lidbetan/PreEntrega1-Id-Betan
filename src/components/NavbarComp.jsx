@@ -13,7 +13,7 @@ import CartContext from './Context/CartContext/CartContext';
 function NavBar() {
   const { cartQ } = useContext(CartContext)
   return (
-    <div className='navbar-background'>
+    <div className='navbar-background pb-2'>
       <Navbar expand="lg" className="navbar w-75 m-auto justify-content-between flex-row-reverse flex-md-row">
         <Container className='d-flex flex-column flex-md-row gap-2'>
           <Link to="/" className="text-uppercase text-decoration-none p-2"><span className='brand-name fw-bold fs-1'>Rock<span className='ampersand'>&</span>D</span></Link>

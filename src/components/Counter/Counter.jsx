@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, {useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import useCounter from '../../hooks/useCounter'
 import AddToast from '../Alerts/Toasts/addToast'

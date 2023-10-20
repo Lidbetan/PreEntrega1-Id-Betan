@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ClearCart from './ClearCart'
 import { Button } from 'react-bootstrap'
 
