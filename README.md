@@ -15,6 +15,9 @@ En este proyecto se desarrolló una SPA de venta online de remeras de rock y d&d
 - GITHUB
 - FIREBASE/FIRESTORE
 
+------------
+
+
 ###COMENCEMOS :tw-1f4aa:
 Primero debes clonar este repositorio en tu equipo. Para ello copia el URL del repositorio en la pestaña de arriba a la derecha que dice:  "code".
 Luego desde la consola procede a clonar el repositorio con la siguiente línea de comando:
@@ -32,6 +35,9 @@ Una vez instalada las dependecias, podemos correr el proyecto ejecutando el sigu
 
 Finalmente hacer ctrl + click en el local host:
 ![localhost](https://github.com/Lidbetan/ProyectoFinal-Id-Betan/assets/131318671/82bde1d1-1549-42eb-abf3-3762a60857f3)
+
+------------
+
 
 
 ###DEMO :tw-2728:
