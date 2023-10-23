@@ -122,6 +122,14 @@ body {
     background-color: #DA0037;
 }
 
+.button.home{
+    position: fixed;
+    margin: 0 10px 10px 10px !important;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
 .counter {
     width: 30px;
     height: 32px;

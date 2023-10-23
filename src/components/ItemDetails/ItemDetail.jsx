@@ -14,9 +14,7 @@ const ItemDetail = ({ item, onAdd}) => {
         <div className='counter-container container-sm'>
             <Counter text="Add to Cart" onAdd={onAdd} item={item}/>
         </div>
-      </div>  
-          
-
+      </div> 
     </div>
 
   )
