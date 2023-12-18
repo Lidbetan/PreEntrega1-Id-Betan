@@ -11,7 +11,7 @@ import './index.css'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDn-0YNbByze9MbLLXzoMYHXUajvFi9Mmw",
+  apiKey: `${import.meta.env.FIREBASE_KEY}`,
   authDomain: "rock-and-d-e-store.firebaseapp.com",
   projectId: "rock-and-d-e-store",
   storageBucket: "rock-and-d-e-store.appspot.com",

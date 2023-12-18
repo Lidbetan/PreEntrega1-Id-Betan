@@ -7,7 +7,7 @@ import CartContextProvider from './components/Context/CartContext/CartContextPro
 
 
 function App() {
-
+  
   return (
     <div>
       {/* UserContextProvider viene con su value={user} traido desde el provider.
